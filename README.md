@@ -316,6 +316,21 @@ INSERT INTO channel_accounts (
 go test ./...
 ```
 
+### Run Development
+```bash
+go run ./...
+```
+
+### Run buld
+```bash
+go build ./...
+```
+
+### Run Centrifugo
+```basg
+.\centrifugo --config=centrifugo.json //Note: You must download Centrifugo to your computer
+```
+
 ### Build Binary
 
 ```bash
