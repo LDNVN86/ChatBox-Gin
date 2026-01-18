@@ -255,6 +255,59 @@ Messages are pushed via Centrifugo to channel: `chat:workspace_{workspace_id}`
 - **messages**: Individual messages
 - **rules**: Bot automation rules
 
+## 🧪 Database Seeding
+
+To quickly set up a development environment with a test workspace and user, you can run the following SQL commands in your PostgreSQL database:
+
+```sql
+-- 1. Create a new workspace
+INSERT INTO workspaces (id, name, created_at, updated_at)
+VALUES (
+  'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
+  'Workspace 2',
+  NOW(),
+  NOW()
+);
+
+-- 2. Create an admin user for the new workspace
+-- Password: 123456 (bcrypt hash)
+INSERT INTO users (id, workspace_id, email, password_hash, name, role, is_active, created_at, updated_at)
+VALUES (
+  gen_random_uuid(),
+  'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
+  'admin2@example.com',
+  '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZRGdjGj/n3.QKXK5TdLnBv1x4NYie',
+  'Admin Workspace 2',
+  'admin',
+  true,
+  NOW(),
+  NOW()
+);
+
+-- 3. Connect a Facebook Channel Account
+INSERT INTO channel_accounts (
+  id,
+  workspace_id,
+  channel_type,
+  name,
+  channel_id,
+  credentials,
+  is_active,
+  created_at,
+  updated_at
+) VALUES (
+  gen_random_uuid(),
+  'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
+  'facebook',
+  'FB Page Test',
+  'ID FanPage',
+  '{"page_access_token": "Key Access_Token From FB Dev"}',
+  true,
+  NOW(),
+  NOW()
+);
+```
+
 ## 🧪 Development
 
 ### Run Tests
