@@ -33,6 +33,10 @@ A high-performance, scalable chat platform backend built with **Go** and **Gin**
 | Auth      | JWT (golang-jwt/jwt) |
 | Password  | bcrypt               |
 
+```
+Note: It can be replaced with Argon2 if desired, but note that if replaced with Argon2, the logic code must be changed.
+```
+
 ## 📁 Project Structure
 
 ```
