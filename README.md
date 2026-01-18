@@ -1,6 +1,5 @@
-```
+
 Note: This project was done by our team a year ago, but since we no longer use it, we have requested permission to use the source code for improvement. I haven't merged the entire source code; Zalo, the web version, etc., and many other things are still there. This is just a small part. (There are also projects written in Nestjs and Socket.io.) This is just a project for learning purposes and should not be applied everywhere, as Facebook and Zalo now support many automation features and don't require complex chatbots.
-```
 
 # ChatBox Backend API
 
