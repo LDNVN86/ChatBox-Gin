@@ -1,0 +1,32 @@
+app:
+  name: chatbox-gin
+  env: ${APP_ENV:development}
+  port: ${APP_PORT:8080}
+
+database:
+  host: ${DB_HOST:localhost}
+  port: ${DB_PORT:5432}
+  name: ${DB_NAME:chatbox_gin}
+  user: ${DB_USER:chatbox}
+  password: ${DB_PASSWORD:chatbox_secret}
+  ssl_mode: ${DB_SSL_MODE:disable}
+  max_open_conns: 25
+  max_idle_conns: 5
+  conn_max_lifetime: 5m
+
+redis:
+  url: ${REDIS_URL:redis://localhost:6379}
+
+centrifugo:
+  url: ${CENTRIFUGO_URL:http://localhost:8000}
+  api_key: ${CENTRIFUGO_API_KEY:api_key_for_backend}
+  hmac_secret_key: ${CENTRIFUGO_HMAC_SECRET_KEY:token_hmac_secret}
+
+jwt:
+  secret: ${JWT_SECRET:your-super-secret-key-change-in-production}
+  access_duration: ${JWT_ACCESS_DURATION:15m}
+  refresh_duration: ${JWT_REFRESH_DURATION:168h}
+
+logging:
+  level: ${LOG_LEVEL:debug}
+  format: ${LOG_FORMAT:console}

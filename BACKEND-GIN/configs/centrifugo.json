@@ -1,0 +1,21 @@
+{
+  "client": {
+    "insecure": true,
+    "allowed_origins": ["http://localhost:3000"]
+  },
+  "http_api": {
+    "key": "chatbox-api-key-2026"
+  },
+  "channel": {
+    "namespaces": [
+      {
+        "name": "chat",
+        "presence": true,
+        "join_leave": true,
+        "history_size": 100,
+        "history_ttl": "300s"
+      }
+    ]
+  },
+  "log_level": "debug"
+}
