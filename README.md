@@ -266,6 +266,10 @@ Messages are pushed via Centrifugo to channel: `chat:workspace_{workspace_id}`
 
 To quickly set up a development environment with a test workspace and user, you can run the following SQL commands in your PostgreSQL database:
 
+```bash
+go run scripts/seed/main.go
+```
+or
 ```sql
 -- 1. Create a new workspace
 INSERT INTO workspaces (id, name, created_at, updated_at)
